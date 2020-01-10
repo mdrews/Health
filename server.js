@@ -4,10 +4,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const config = require('./config');
+const routes = require('./routes/api/weight');
 
 // Middleware
 const app = express();
 app.use(bodyParser.json());
+app.use(routes);
 
 const port = process.env.port || 5000;
 

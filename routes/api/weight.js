@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Weight = require('../../../models/Weight');
+const Weight = require('../../models/Weight');
 
 router.get('/', (req, res) => {
   Weight.find()
