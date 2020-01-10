@@ -3,7 +3,7 @@ const chalk = require('chalk');
 const express = require('express');
 const mongoose = require('mongoose');
 
-const config = require('./config')
+const config = require('./config');
 
 // Middleware
 const app = express();
