@@ -13,7 +13,7 @@ app.use('/api/weights', weights);
 
 const port = process.env.port || 5000;
 
-mongoose.connect(config.mongoURI)
+mongoose.connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log(chalk.magenta(`Connected to MongoDB`)))
   .catch(error => console.log(chalk.red(`Error connecting to MongoDB: ${error}`)));
 
