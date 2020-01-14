@@ -6,4 +6,6 @@ const ExerciseSchema = new Schema({
     type: String,
     required: true
   }
-})
+});
+
+module.exports = Exercise = mongoose.model('exercises', ExerciseSchema);
