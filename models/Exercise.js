@@ -5,6 +5,14 @@ const ExerciseSchema = new Schema({
   exerciseType: {
     type: String,
     required: true
+  },
+  time: {
+    type: Date,
+    required: false
+  },
+  distance: {
+    type: Number,
+    required: false
   }
 });
 
