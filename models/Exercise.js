@@ -13,6 +13,10 @@ const ExerciseSchema = new Schema({
   distance: {
     type: Number,
     required: false
+  },
+  calories: {
+    type: Number,
+    required: false
   }
 });
 
