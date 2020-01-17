@@ -10,6 +10,7 @@ const weights = require('./routes/api/weight');
 const app = express();
 app.use(bodyParser.json());
 app.use('/api/weights', weights);
+app.use('/api/exercise', exercise);
 
 const port = process.env.port || 5000;
 
