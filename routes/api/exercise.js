@@ -4,7 +4,6 @@ const Exercise = require('../../models/exercises');
 
 router.get('/', (req, res) => {
   Weight.find()
-    .sort({ date: -1 })
     .then(weights => res.json(weights));
 });
 
