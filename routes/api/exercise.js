@@ -3,8 +3,8 @@ const router = express.Router();
 const Exercise = require('../../models/exercises');
 
 router.get('/', (req, res) => {
-  Weight.find()
-    .then(weights => res.json(weights));
+  Exercise.find()
+    .then(exercises => res.json(exercises));
 });
 
 router.post('/', (req, res) => {
