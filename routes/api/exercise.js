@@ -8,9 +8,11 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const newWeight = new Weight({
-    user: req.body.user,
-    weight: req.body.weight
+  const newExercise = new Exercise({
+    exerciseType: req.body.exerciseType,
+    time: req.body.time,
+    distance: req.body.distance,
+    calories: req.body.calories
   });
   newWeight.save().then(weight => res.json(weight));
 });
