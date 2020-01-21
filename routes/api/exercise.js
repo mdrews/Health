@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
     distance: req.body.distance,
     calories: req.body.calories
   });
-  newWeight.save().then(weight => res.json(weight));
+  newExercise.save().then(exercise => res.json(exercise));
 });
 
 module.exports = router;
