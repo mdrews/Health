@@ -6,14 +6,14 @@ const WeightSchema = new Schema({
     required: true,
     type: Number
   },
-  Weight: {
+  weight: {
     required: true,
-    type: Number
+    type: String
   },
-  DateRecorded: {
+  dateRecorded: {
     required: false,
     type: Date,
-    default: Date.now
+    default: Date.now()
   }
 });
 
