@@ -8,6 +8,7 @@ export const addWeight = weight => {
 }
 
 export const getWeights = () => {
+  console.log('action: get weight')
   return {
     type: GET_WEIGHT
   }
