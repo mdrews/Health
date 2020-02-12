@@ -21,6 +21,7 @@ function App() {
         </a>
         <AddWeight />
       </header>
+      <AddWeight />
     </div>
   );
 }
