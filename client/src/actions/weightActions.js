@@ -1,15 +1,24 @@
-import { GET_WEIGHT, ADD_WEIGHT } from "./consts"
+import { GET_WEIGHT, ADD_WEIGHT, SET_LOADING } from "./consts"
 
 export const addWeight = weight => {
+  console.log('action: add weight');
   return {
     type: ADD_WEIGHT,
     weight
   }
 }
 
-export const getWeights = () => {
-  console.log('action: get weight')
+export const getWeights = () => dispatch => {
+  dispatch(setLoading());
+  console.log('action: get weight');
   return {
     type: GET_WEIGHT
+  }
+}
+
+export const setLoading = () => {
+  console.log('action: set loading');
+  return {
+    type: SET_LOADING
   }
 }
