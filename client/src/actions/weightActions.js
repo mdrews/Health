@@ -1,4 +1,5 @@
-import { GET_WEIGHT, ADD_WEIGHT } from "./consts"
+import { GET_WEIGHT, ADD_WEIGHT, SET_LOADING } from "./consts"
+import Axios from "axios"
 
 export const addWeight = weight => {
   return {
@@ -7,9 +8,14 @@ export const addWeight = weight => {
   }
 }
 
-export const getWeights = () => {
+export const getWeights = () => dispatch => {
   console.log('action: get weight')
+  dispatch(setWeightLoading);
+  Axios.get('/api/weights');
+}
+
+export const setWeightLoading = () => {
   return {
-    type: GET_WEIGHT
+    type: SET_LOADING
   }
 }

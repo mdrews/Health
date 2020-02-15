@@ -3,12 +3,14 @@ import DatePicker from 'react-datepicker';
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const AddWeight = () => {
+const AddWeight = props => {
 
   const [startDate, setStartDate] = useState(Date.now());
 
   return(<div>
     <button>Get Weights</button>
+    <h2>Weights</h2>
+    <ul>blah</ul>
     <DatePicker
       selected={startDate}
       onChange={date => setStartDate(date)}
