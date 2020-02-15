@@ -8,9 +8,9 @@ const AddWeight = props => {
   const [startDate, setStartDate] = useState(Date.now());
 
   return(<div>
-    <button>Get Weights</button>
-    <h2>Weights</h2>
+    <button onClick={() => props.getWeight}>Get Weights</button>
     <ul>blah</ul>
+    <br />
     <DatePicker
       selected={startDate}
       onChange={date => setStartDate(date)}
