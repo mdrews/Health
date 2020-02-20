@@ -6,6 +6,7 @@ export const weightReducer = (state = [], action) => {
     case ADD_WEIGHT:
       return [...state, { date: Date.now(), weight: action.weight }]
     case SET_LOADING:
+      // comment
       console.log('updating');
       return state;
     default:
