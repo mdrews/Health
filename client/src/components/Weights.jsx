@@ -12,7 +12,7 @@ const Weights = props => {
 
   return(<div>
 
-    <button onClick={() => props.getWeight}>Get Weights</button>
+    <button onClick={() => props.getWeight()}>Get Weights</button>
 
     <ul>blah</ul>
     <br />
@@ -38,6 +38,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getWeight: () => {
+      console.log('dispatch: getWeights');
       dispatch(getWeights());
     }
   }

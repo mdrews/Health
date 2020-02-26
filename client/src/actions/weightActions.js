@@ -12,15 +12,24 @@ export const addWeight = weight => dispatch => {
   }
 }
 
-export const getWeights = () => dispatch => {
-  console.log('action: get weight');
-  dispatch(setLoading());
-  Axios
-    .get('/api/weights')
-    .then({
-      type: SET_LOADING
-  });
+export const getWeights = () => {
+  return {
+    type: GET_WEIGHT
+  }
 }
+
+// export const getWeights = () => dispatch => {
+//   console.log('action: get weight');
+//   dispatch(setLoading());
+//   Axios
+//     .get('/api/weights')
+//     .then(response => {
+//       dispatch({
+//         type: GET_WEIGHT,
+//         payload: response.data
+//       });
+//   });
+// }
 
 export const setLoading = () => {
   console.log('action: set loading');
