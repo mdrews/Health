@@ -4,7 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const config = require('./config');
-const weights = require('./routes/api/weight');
+const weights = require('./routes/api/weights');
 const exercise = require('./routes/api/exercise');
 
 // Middleware

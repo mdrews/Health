@@ -1,7 +1,12 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import logo from './logo.svg';
 import './App.css';
-import AddWeight from './components/AddWeight';
+import Weights from './components/Weights';
+import { weightReducer } from './reducers/weightReducer';
+
+const store = createStore(weightReducer);
 
 function App() {
   return (
@@ -19,9 +24,8 @@ function App() {
         >
           Learn React
         </a>
-        <AddWeight />
+        <Provider store={store}><Weights /></Provider>
       </header>
-      <AddWeight />
     </div>
   );
 }

@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import DatePicker from 'react-datepicker';
 
 import "react-datepicker/dist/react-datepicker.css";
+import { getWeights } from '../actions/weightActions';
 
-const AddWeight = props => {
+const Weights = props => {
 
+  console.log(props);
   const [startDate, setStartDate] = useState(Date.now());
 
   return(<div>
+
     <button onClick={() => props.getWeight}>Get Weights</button>
+
     <ul>blah</ul>
     <br />
     <DatePicker
@@ -24,4 +29,18 @@ const AddWeight = props => {
   </div>);
 }
 
-export default AddWeight;
+const mapStateToProps = state => {
+  return {
+    weights: state
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getWeight: () => {
+      dispatch(getWeights());
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Weights);
