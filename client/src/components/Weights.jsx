@@ -14,7 +14,7 @@ const Weights = props => {
 
     <button onClick={() => props.getWeight()}>Get Weights</button>
 
-    <ul>blah</ul>
+    <ul></ul>
     <br />
     <DatePicker
       selected={startDate}

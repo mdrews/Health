@@ -1,12 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
 import logo from './logo.svg';
 import './App.css';
 import Weights from './components/Weights';
 import { weightReducer } from './reducers/weightReducer';
 
-const store = createStore(weightReducer);
+const store = createStore(weightReducer, applyMiddleware(thunk));
 
 function App() {
   return (

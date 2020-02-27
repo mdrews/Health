@@ -7,7 +7,7 @@ export const weightReducer = (state = [], action) => {
       return [...state, { date: Date.now(), weight: action.weight }];
     case GET_WEIGHT:
       console.log('reducer: get_weight');
-      return state;
+      return {loading: false, weight: action.weights};
     case SET_LOADING:
       // comment 2
       console.log('updating');
