@@ -9,9 +9,8 @@ export const weightReducer = (state = [], action) => {
       console.log('reducer: get_weight');
       return {loading: false, weights: action.weights};
     case SET_LOADING:
-      // comment 2
-      console.log('updating');
-      return state;
+      console.log('loading...');
+      return {...state, loading: true};
     default:
       return state;
   }

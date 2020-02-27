@@ -14,7 +14,7 @@ export const addWeight = weight => dispatch => {
 
 export const getWeights = () => dispatch => {
   console.log('action: get weight');
-  //dispatch(setLoading());
+  dispatch(setLoading());
   axios
     .get('/api/weights')
     .then(response => 
