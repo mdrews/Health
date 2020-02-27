@@ -3,11 +3,14 @@ import { connect } from 'react-redux';
 import DatePicker from 'react-datepicker';
 
 import "react-datepicker/dist/react-datepicker.css";
-import { getWeights } from '../actions/weightActions';
+import { getWeights, addWeight } from '../actions/weightActions';
 
 const Weights = health => {
 
+
   console.log(health);
+
+  const [weight, setWeight] = useState();
   const [startDate, setStartDate] = useState(Date.now());
 
   return(<div>
@@ -22,6 +25,7 @@ const Weights = health => {
     </ul>
     <br />
     
+    Date: 
     <DatePicker
       selected={startDate}
       onChange={date => setStartDate(date)}
@@ -31,7 +35,9 @@ const Weights = health => {
       timeCaption="time"
       dateFormat="MMMM d, yyyy h:mm aa"
     />
-    <button>Add Weight</button>
+    Weight: 
+    <input value={weight} onChange={e => setWeight(e.target.value)} />
+    <button onClick={() => health.addWeight(weight, startDate)}>Add Weight</button>
   </div>);
 }
 
@@ -46,6 +52,10 @@ const mapDispatchToProps = dispatch => {
     getWeight: () => {
       console.log('dispatch: getWeights');
       dispatch(getWeights());
+    },
+    addWeight: (weight, startDate) => {
+      console.log(`dispatch: addWeight ${weight} ${startDate}`);
+      dispatch(addWeight(weight, startDate));
     }
   }
 }
