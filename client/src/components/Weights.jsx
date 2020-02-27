@@ -5,16 +5,18 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { getWeights } from '../actions/weightActions';
 
-const Weights = props => {
+const Weights = weights => {
 
-  console.log(props);
+  console.log(weights);
   const [startDate, setStartDate] = useState(Date.now());
 
   return(<div>
 
-    <button onClick={() => props.getWeight()}>Get Weights</button>
+    <button onClick={() => weights.getWeight()}>Get Weights</button>
 
-    <ul></ul>
+    <ul>
+      {weights.map}
+    </ul>
     <br />
     <DatePicker
       selected={startDate}
@@ -31,7 +33,7 @@ const Weights = props => {
 
 const mapStateToProps = state => {
   return {
-    weights: state
+    health: state
   }
 }
 
