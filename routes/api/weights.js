@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  console.log('POST weight');
   const newWeight = new Weight({
     user: req.body.user,
     weight: req.body.weight
