@@ -4,7 +4,7 @@ import axios from "axios";
 export const addWeight = weight => dispatch => {
   console.log('action: add weight');
   axios
-    .post('api/weights')
+    .post('api/weights', weight)
     .then()
   return {
     type: ADD_WEIGHT,
