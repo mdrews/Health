@@ -20,7 +20,7 @@ const Weights = health => {
     {health.weights && <div>weights!</div>}
     <ul>
       {health.weights && health.weights.map(weight => { return(
-        <li>{weight.weight} {weight.dateRecorded}</li>
+        <li key={weight._id}>{weight.weight} {weight.dateRecorded}</li>
       )})}
     </ul>
     <br />
