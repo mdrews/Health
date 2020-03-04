@@ -55,7 +55,7 @@ const mapDispatchToProps = dispatch => {
     },
     addWeight: (weight, startDate) => {
       console.log(`dispatch: addWeight ${weight} ${startDate}`);
-      dispatch(addWeight({weight: weight, user: 1, date: startDate}));
+      dispatch(addWeight({weight: weight, user: 1, dateRecorded: startDate}));
     }
   }
 }
