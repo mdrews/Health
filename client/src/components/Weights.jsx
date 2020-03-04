@@ -10,7 +10,7 @@ const Weights = health => {
 
   useEffect(() => {
     health.getWeights()
-  });
+  }, []);
 
   console.log(health);
 
