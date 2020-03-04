@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import DatePicker from 'react-datepicker';
+import dFormat from 'dateformat';
 
 import "react-datepicker/dist/react-datepicker.css";
 import { getWeights, addWeight } from '../actions/weightActions';
@@ -9,7 +10,7 @@ const Weights = health => {
 
   useEffect(() => {
     health.getWeights()
-  })
+  });
 
   console.log(health);
 
@@ -23,7 +24,7 @@ const Weights = health => {
     {health.weights && <div>weights!</div>}
     <ul>
       {health.weights && health.weights.map(weight => { return(
-        <li key={weight._id}>{weight.weight} {weight.dateRecorded}</li>
+        <li key={weight._id}>{weight.weight} {dFormat(weight.dateRecorded, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</li>
       )})}
     </ul>
     <br />
