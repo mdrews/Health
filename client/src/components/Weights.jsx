@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import DatePicker from 'react-datepicker';
 
@@ -7,6 +7,9 @@ import { getWeights, addWeight } from '../actions/weightActions';
 
 const Weights = health => {
 
+  useEffect(() => {
+    health.getWeights()
+  })
 
   console.log(health);
 
@@ -15,7 +18,7 @@ const Weights = health => {
 
   return(<div>
 
-    <button onClick={() => health.getWeight()}>Get Weights</button>
+    <button onClick={() => health.getWeights()}>Get Weights</button>
 
     {health.weights && <div>weights!</div>}
     <ul>
@@ -49,7 +52,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getWeight: () => {
+    getWeights: () => {
       console.log('dispatch: getWeights');
       dispatch(getWeights());
     },
