@@ -19,4 +19,10 @@ router.post('/', (req, res) => {
   newWeight.save().then(weight => res.json(weight));
 });
 
+router.delete('/', (req, res) => {
+  console.log('DELETE weight');
+  Weight.findByIdAndDelete(req.body.id)
+  then(() => res.json({status: "success"}));
+});
+
 module.exports = router;
