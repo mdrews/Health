@@ -1,4 +1,4 @@
-import { GET_WEIGHT, ADD_WEIGHT, SET_LOADING } from "./consts"
+import { GET_WEIGHT, ADD_WEIGHT, SET_LOADING, REMOVE_WEIGHT } from "./consts"
 import axios from "axios";
 
 export const addWeight = weight => dispatch => {
@@ -22,6 +22,18 @@ export const getWeights = () => dispatch => {
         type: GET_WEIGHT,
         weights: response.data
     }));
+}
+
+export const removeWeight = id => dispatch => {
+  console.log('action: remove weight');
+  dispatch(setLoading());
+  axios
+    .delete('/api/weights', id)
+    .then(() => 
+      dispatch({
+        type: REMOVE_WEIGHT,
+        id
+      }))
 }
 
 
