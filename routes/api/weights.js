@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
     weight: req.body.weight,
     dateRecorded: req.body.dateRecorded
   });
-  newWeight.save().then(weight => res.json(weight));
+  newWeight.save().then(weight => res.status(200).json(weight));
 });
 
 router.delete('/', (req, res) => {
