@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
   console.log('GET weight')
   Weight.find()
     .sort({ date: -1 })
-    .then(weights => res.json(weights));
+    .then(weights => res.status(200).json(weights));
 });
 
 router.post('/', (req, res) => {
