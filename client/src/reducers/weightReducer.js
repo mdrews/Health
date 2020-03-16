@@ -1,4 +1,4 @@
-import { ADD_WEIGHT, SET_LOADING, GET_WEIGHT } from "../actions/consts";
+import { ADD_WEIGHT, SET_LOADING, GET_WEIGHT, REMOVE_WEIGHT } from "../actions/consts";
 
 export const weightReducer = (state = [], action) => {
   console.log('reducer');
@@ -8,6 +8,8 @@ export const weightReducer = (state = [], action) => {
     case GET_WEIGHT:
       console.log('reducer: get_weight');
       return {loading: false, weights: action.weights};
+    case REMOVE_WEIGHT:
+      return { loading: false, weights: action.weights};
     case SET_LOADING:
       console.log('loading...');
       return {...state, loading: true};
