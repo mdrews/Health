@@ -4,7 +4,7 @@ import DatePicker from 'react-datepicker';
 import dFormat from 'dateformat';
 
 import "react-datepicker/dist/react-datepicker.css";
-import { getWeights, addWeight } from '../actions/weightActions';
+import { getWeights, addWeight, removeWeight } from '../actions/weightActions';
 
 const Weights = health => {
 
