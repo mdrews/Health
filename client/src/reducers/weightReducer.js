@@ -9,6 +9,7 @@ export const weightReducer = (state = [], action) => {
       console.log('reducer: get_weight');
       return {loading: false, weights: action.weights};
     case REMOVE_WEIGHT:
+      console.log('reducer: remove_weight');
       return { loading: false, weights: action.weights};
     case SET_LOADING:
       console.log('loading...');
