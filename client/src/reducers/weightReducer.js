@@ -15,6 +15,7 @@ export const weightReducer = (state = [], action) => {
       console.log('reducer: set loading...');
       return {...state, loading: true};
     default:
+      console.log('default state');
       return state;
   }
 }
