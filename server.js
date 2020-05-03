@@ -21,4 +21,4 @@ mongoose.connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: t
 
 app.listen(port, () => {
   console.log(`Server alive and listening on port: ${chalk.blue(port)}`);
-});
+}); //test
