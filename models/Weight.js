@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-/// Weight Object blah
+/// Weight Object
 const WeightSchema = new Schema({
   user: {
     required: true,
