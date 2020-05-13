@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const Exercise = require('../../models/Exercise');
 
+/**
+ * Gets all exercises
+ */
 router.get('/', (req, res) => {
   Exercise.find()
     .then(exercises => res.json(exercises));
