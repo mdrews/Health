@@ -9,6 +9,9 @@ router.get('/', (req, res) => {
     .then(weights => res.status(200).json(weights));
 });
 
+/**
+ * @param {int} user user id
+ */
 router.post('/', (req, res) => {
   console.log('POST weight');
   const newWeight = new Weight({
